@@ -90,6 +90,7 @@ To start the service
 To test the service   
 
 	http://localhost:5555/api/pupil/v1/pupils/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a
+	http://localhost:8086/v1/pupils/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a
    
 You should see a json response as follows ...
 
@@ -130,6 +131,16 @@ To see all build docker images
 Now we are going to use docker-compose to start the actual image. To start the docker image , change to the docker-compose/common directory. Issue the following docker-compose command.
 
     docker-compose -f docker-compose.yml up
+    
+or individually
+
+    docker-compose -f docker-compose.yml up eurekaserver
+    docker-compose -f docker-compose.yml up zipkin
+    docker-compose -f docker-compose.yml up zuulserver
+    docker-compose -f docker-compose.yml up addressservice
+    docker-compose -f docker-compose.yml up pupilservice
+    docker-compose -f docker-compose.yml up logspout
+         
     
 This command will start the  
 
